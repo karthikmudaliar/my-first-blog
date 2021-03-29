@@ -5,6 +5,10 @@
     padding: 20px 20px 20px 40px;
 }
 
+#publish-btn {
+    float: right;
+}
+
 .page-header h1,
 .page-header h1 a,
 .page-header h1 a:visited,
@@ -67,4 +71,8 @@ h4 {
 .btn-default:hover {
     color: #FFFFFF;
     background-color: #C25100;
+}
+
+.comment {
+    margin: 20px 0px 20px 20px;
 }
