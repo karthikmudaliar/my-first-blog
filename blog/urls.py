@@ -1,5 +1,9 @@
-from django.urls import path
+from django.urls import path,include
 from . import views
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'posts', views.PostViewSet)
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
@@ -12,4 +16,10 @@ urlpatterns = [
     path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
     path('comment/<int:pk>/approve/', views.comment_approve, name='comment_approve'),
     path('comment/<int:pk>/remove/', views.comment_remove, name='comment_remove'),
+    path('user<int:fk>', views.user_post, name='user_post')
+]
+
+urlpatterns = urlpatterns + [
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

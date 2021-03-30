@@ -8,8 +8,8 @@
         </time>
         <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
         <p>{{ post.text|linebreaksbr }}</p>
-        <p><a href="{% url 'user_post' fk=post.author_id %}">{{ post.author }}</a></p>
         <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
     </article>
 {% endfor %}
 {% endblock %}
+
